@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { CompleterService } from "ng2-completer";
+// import { CompleterService } from "ng2-completer";
 
 import { DefaultEditor } from "./default-editor";
 
@@ -19,7 +19,7 @@ import { DefaultEditor } from "./default-editor";
 export class CompleterEditorComponent extends DefaultEditor implements OnInit {
   completerStr: string = "";
 
-  constructor(private completerService: CompleterService) {
+  constructor() {
     super();
   }
 
@@ -29,11 +29,11 @@ export class CompleterEditorComponent extends DefaultEditor implements OnInit {
       this.cell.getColumn().editor.type === "completer"
     ) {
       const config = this.cell.getColumn().getConfig().completer;
-      config.dataService = this.completerService.local(
-        config.data,
-        config.searchFields,
-        config.titleField
-      );
+      // config.dataService = this.completerService.local(
+      //   config.data,
+      //   config.searchFields,
+      //   config.titleField
+      // );
       config.dataService.descriptionField(config.descriptionField);
     }
   }

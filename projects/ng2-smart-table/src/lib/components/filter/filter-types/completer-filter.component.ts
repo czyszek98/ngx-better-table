@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
-import { CompleterService } from "ng2-completer";
+// import { CompleterService } from "ng2-completer";
 
 import { DefaultFilter } from "./default-filter";
 import { distinctUntilChanged, debounceTime, map } from "rxjs/operators";
@@ -22,17 +22,17 @@ import { distinctUntilChanged, debounceTime, map } from "rxjs/operators";
 export class CompleterFilterComponent extends DefaultFilter implements OnInit {
   completerContent = new Subject<any>();
 
-  constructor(private completerService: CompleterService) {
+  constructor() {
     super();
   }
 
   ngOnInit() {
     const config = this.column.getFilterConfig().completer;
-    config.dataService = this.completerService.local(
-      config.data,
-      config.searchFields,
-      config.titleField
-    );
+    // config.dataService = this.completerService.local(
+    //   config.data,
+    //   config.searchFields,
+    //   config.titleField
+    // );
     config.dataService.descriptionField(config.descriptionField);
 
     this.changesSubscription = this.completerContent
