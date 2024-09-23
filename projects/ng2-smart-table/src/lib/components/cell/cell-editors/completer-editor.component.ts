@@ -1,37 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { CompleterService } from 'ng2-completer';
+import { Component, OnInit } from "@angular/core";
+import { CompleterService } from "ng2-completer";
 
-import { DefaultEditor } from './default-editor';
+import { DefaultEditor } from "./default-editor";
 
 @Component({
-  selector: 'completer-editor',
+  selector: "completer-editor",
   template: `
-    <ng2-completer [(ngModel)]="completerStr"
+    <!-- <ng2-completer [(ngModel)]="completerStr"
                    [dataService]="cell.getColumn().getConfig().completer.dataService"
                    [minSearchLength]="cell.getColumn().getConfig().completer.minSearchLength || 0"
                    [pause]="cell.getColumn().getConfig().completer.pause || 0"
                    [placeholder]="cell.getColumn().getConfig().completer.placeholder || 'Start typing...'"
                    (selected)="onEditedCompleter($event)">
-    </ng2-completer>
-    `,
+    </ng2-completer> -->
+    <div>NOT IMPLEMENTED</div>
+  `,
 })
 export class CompleterEditorComponent extends DefaultEditor implements OnInit {
-
-  completerStr: string = '';
+  completerStr: string = "";
 
   constructor(private completerService: CompleterService) {
     super();
   }
 
   ngOnInit() {
-    if (this.cell.getColumn().editor && this.cell.getColumn().editor.type === 'completer') {
+    if (
+      this.cell.getColumn().editor &&
+      this.cell.getColumn().editor.type === "completer"
+    ) {
       const config = this.cell.getColumn().getConfig().completer;
-      config.dataService = this.completerService.local(config.data, config.searchFields, config.titleField);
+      config.dataService = this.completerService.local(
+        config.data,
+        config.searchFields,
+        config.titleField
+      );
       config.dataService.descriptionField(config.descriptionField);
     }
   }
 
-  onEditedCompleter(event: { title: '' }): boolean {
+  onEditedCompleter(event: { title: "" }): boolean {
     this.cell.newValue = event.title;
     return false;
   }

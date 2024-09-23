@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { CompleterService } from 'ng2-completer';
+import { Component, OnInit } from "@angular/core";
+import { Subject } from "rxjs";
+import { CompleterService } from "ng2-completer";
 
-import { DefaultFilter } from './default-filter';
-import { distinctUntilChanged, debounceTime, map } from 'rxjs/operators';
+import { DefaultFilter } from "./default-filter";
+import { distinctUntilChanged, debounceTime, map } from "rxjs/operators";
 
 @Component({
-  selector: 'completer-filter',
+  selector: "completer-filter",
   template: `
-    <ng2-completer [(ngModel)]="query"
+    <!-- <ng2-completer [(ngModel)]="query"
                    (ngModelChange)="inputTextChanged($event)"
                    [dataService]="column.getFilterConfig().completer.dataService"
                    [minSearchLength]="column.getFilterConfig().completer.minSearchLength || 0"
                    [pause]="column.getFilterConfig().completer.pause || 0"
                    [placeholder]="column.getFilterConfig().completer.placeholder || 'Start typing...'"
                    (selected)="completerContent.next($event)">
-    </ng2-completer>
+    </ng2-completer> -->
+    <div>NOT IMPLEMENTED</div>
   `,
 })
 export class CompleterFilterComponent extends DefaultFilter implements OnInit {
-
   completerContent = new Subject<any>();
 
   constructor(private completerService: CompleterService) {
@@ -28,12 +28,16 @@ export class CompleterFilterComponent extends DefaultFilter implements OnInit {
 
   ngOnInit() {
     const config = this.column.getFilterConfig().completer;
-    config.dataService = this.completerService.local(config.data, config.searchFields, config.titleField);
+    config.dataService = this.completerService.local(
+      config.data,
+      config.searchFields,
+      config.titleField
+    );
     config.dataService.descriptionField(config.descriptionField);
 
     this.changesSubscription = this.completerContent
       .pipe(
-        map((ev: any) => (ev && ev.title) || ev || ''),
+        map((ev: any) => (ev && ev.title) || ev || ""),
         distinctUntilChanged(),
         debounceTime(this.delay)
       )
@@ -47,7 +51,7 @@ export class CompleterFilterComponent extends DefaultFilter implements OnInit {
     // workaround to trigger the search event when the home/end buttons are clicked
     // when this happens the [(ngModel)]="query" is set to "" but the (selected) method is not called
     // so here it gets called manually
-    if (event === '') {
+    if (event === "") {
       this.completerContent.next(event);
     }
   }
