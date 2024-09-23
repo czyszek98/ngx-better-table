@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "esModuleInterop": true,
     "declaration": false,
     "module": "es2020",
     "moduleResolution": "node",
@@ -11,18 +12,12 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "ng2-smart-table": [
-        "projects/ng2-smart-table/src/public-api.ts"
-      ]
+      "ng2-smart-table": ["projects/ng2-smart-table/src/public-api.ts"]
     },
     "useDefineForClassFields": false
-  }
+  },
+  "types": ["node", "jest", "angular"]
 }

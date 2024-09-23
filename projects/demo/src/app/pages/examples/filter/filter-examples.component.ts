@@ -1,19 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'filter-examples',
-  templateUrl: './filter-examples.component.html',
+  selector: "filter-examples",
+  templateUrl: "./filter-examples.component.html",
 })
-export class FilterExamplesComponent {
-
+export class FilterExamplesComponent implements OnInit {
   snippets = {
-    sourceRequire: require('raw-loader!../snippets/source-require.md').default,
-    createSource: require('raw-loader!../snippets/create-source.md').default,
-    sourceTemplate: require('raw-loader!../snippets/source-template.md').default,
-    search: require('raw-loader!../snippets/search.md').default,
-    searchTable: require('raw-loader!../snippets/search-table.md').default,
-    sourceFull: require('raw-loader!../snippets/source-full.md').default,
-    hideFilters: require('raw-loader!../snippets/hide-filters.md').default,
+    sourceRequire: "",
+    createSource: "",
+    sourceTemplate: "",
+    search: "",
+    searchTable: "",
+    sourceFull: "",
+    hideFilters: "",
   };
 
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http
+      .get("assets/snippets/source-full.md", { responseType: "text" })
+      .subscribe((data) => {
+        this.snippets.sourceFull = data;
+      });
+
+    this.http
+      .get("assets/snippets/hide-filters.md", { responseType: "text" })
+      .subscribe((data) => {
+        this.snippets.hideFilters = data;
+      });
+  }
 }

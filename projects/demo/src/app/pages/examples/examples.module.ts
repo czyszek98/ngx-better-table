@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -51,19 +51,13 @@ const EXAMPLES_COMPONENTS = [
   ButtonViewComponent,
 ];
 
-@NgModule({
-    imports: [
-        CommonModule,
-        HttpClientModule,
+@NgModule({ declarations: [
+        ExamplesComponent,
+        ...EXAMPLES_COMPONENTS,
+    ], imports: [CommonModule,
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes),
         Ng2SmartTableModule,
-        SharedModule,
-    ],
-    declarations: [
-        ExamplesComponent,
-        ...EXAMPLES_COMPONENTS,
-    ]
-})
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ExamplesModule { }
