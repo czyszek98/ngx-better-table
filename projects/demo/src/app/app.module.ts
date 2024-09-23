@@ -6,7 +6,7 @@ import {
   withInterceptorsFromDi,
 } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { Ng2SmartTableModule } from "ngx-better-table";
+import { NgxBetterTableModule } from "ngx-better-table";
 
 import { PagesModule } from "./pages/pages.module";
 import { AppComponent } from "./app.component";
@@ -19,7 +19,7 @@ import { ScrollPositionDirective } from "./theme/directives/scrollPosition.direc
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    Ng2SmartTableModule,
+    NgxBetterTableModule,
     PagesModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],

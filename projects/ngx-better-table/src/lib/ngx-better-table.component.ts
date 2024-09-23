@@ -21,7 +21,7 @@ import { LocalDataSource } from "./lib/data-source/local/local.data-source";
   styleUrls: ["./ngx-better-table.component.scss"],
   templateUrl: "./ngx-better-table.component.html",
 })
-export class Ng2SmartTableComponent implements OnChanges, OnDestroy {
+export class NgxBetterTableComponent implements OnChanges, OnDestroy {
   @Input() source: any;
   @Input() settings: Object = {};
 

@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
-import { Ng2SmartTableModule } from "ngx-better-table";
+import { NgxBetterTableModule } from "ngx-better-table";
 
 import { HeaderComponent } from "./components/header/header.component";
 import { BasicExampleDataComponent } from "./components/basic-example/basic-example-data.component";
@@ -19,7 +19,7 @@ const SHARED_COMPONENTS = [
 const SHARED_DIRECTIVES = [HighlightCodeDirective];
 
 @NgModule({
-  imports: [RouterModule, CommonModule, Ng2SmartTableModule],
+  imports: [RouterModule, CommonModule, NgxBetterTableModule],
   declarations: [...SHARED_COMPONENTS, ...SHARED_DIRECTIVES],
   exports: [...SHARED_COMPONENTS, ...SHARED_DIRECTIVES],
 })

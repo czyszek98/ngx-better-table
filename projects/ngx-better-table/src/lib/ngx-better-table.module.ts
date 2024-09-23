@@ -8,7 +8,7 @@ import { PagerModule } from "./components/pager/pager.module";
 import { TBodyModule } from "./components/tbody/tbody.module";
 import { THeadModule } from "./components/thead/thead.module";
 
-import { Ng2SmartTableComponent } from "./ngx-better-table.component";
+import { NgxBetterTableComponent } from "./ngx-better-table.component";
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { Ng2SmartTableComponent } from "./ngx-better-table.component";
     TBodyModule,
     THeadModule,
   ],
-  declarations: [Ng2SmartTableComponent],
-  exports: [Ng2SmartTableComponent],
+  declarations: [NgxBetterTableComponent],
+  exports: [NgxBetterTableComponent],
 })
-export class Ng2SmartTableModule {}
+export class NgxBetterTableModule {}

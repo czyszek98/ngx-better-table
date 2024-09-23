@@ -6,7 +6,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from "@angular/common/http";
-import { Ng2SmartTableModule } from "ngx-better-table";
+import { NgxBetterTableModule } from "ngx-better-table";
 
 import { SharedModule } from "../../shared/shared.module";
 import { routes } from "./examples.routes";
@@ -61,7 +61,7 @@ const EXAMPLES_COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    Ng2SmartTableModule,
+    NgxBetterTableModule,
     SharedModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
