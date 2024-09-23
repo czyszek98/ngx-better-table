@@ -1,21 +1,25 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import { UntypedFormControl } from "@angular/forms";
+import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 
-import { DefaultFilter } from 'ng2-smart-table';
+import { DefaultFilter } from "ngx-better-table";
 
 @Component({
   template: `
-    <input 
+    <input
       #number
       [ngClass]="inputClass"
       [formControl]="inputControl"
       class="form-control"
       [placeholder]="column.title"
-      type="number">
+      type="number"
+    />
   `,
 })
-export class CustomFilterComponent extends DefaultFilter implements OnInit, OnChanges {
+export class CustomFilterComponent
+  extends DefaultFilter
+  implements OnInit, OnChanges
+{
   inputControl = new UntypedFormControl();
 
   constructor() {
@@ -24,12 +28,9 @@ export class CustomFilterComponent extends DefaultFilter implements OnInit, OnCh
 
   ngOnInit() {
     this.inputControl.valueChanges
-      .pipe(
-        distinctUntilChanged(),
-        debounceTime(this.delay),
-      )
+      .pipe(distinctUntilChanged(), debounceTime(this.delay))
       .subscribe((value: number) => {
-        this.query = value !== null ? this.inputControl.value.toString() : '';
+        this.query = value !== null ? this.inputControl.value.toString() : "";
         this.setFilter();
       });
   }

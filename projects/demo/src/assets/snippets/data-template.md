@@ -1,8 +1,7 @@
 // ...
 
 @Component({
-  template: `
-    <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
-  `
+template: `    <ngx-better-table [settings]="settings" [source]="data"></ngx-better-table>
+ `
 })
 // ...

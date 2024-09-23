@@ -1,14 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
-import { ViewCell } from 'ng2-smart-table';
+import { ViewCell } from "ngx-better-table";
 
 @Component({
-  template: `
-    {{renderValue}}
-  `,
+  template: ` {{ renderValue }} `,
 })
 export class CustomRenderComponent implements ViewCell, OnInit {
-
   renderValue: string;
 
   @Input() value: string | number;
@@ -17,5 +14,4 @@ export class CustomRenderComponent implements ViewCell, OnInit {
   ngOnInit() {
     this.renderValue = this.value.toString().toUpperCase();
   }
-
 }

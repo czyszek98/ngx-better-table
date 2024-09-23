@@ -1,30 +1,26 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'basic-example',
-  template: `
-    <ng2-smart-table [settings]="settings"></ng2-smart-table>
-  `,
+  selector: "basic-example",
+  template: ` <ngx-better-table [settings]="settings"></ngx-better-table> `,
 })
 export class BasicExampleComponent {
-
   settings = {
     columns: {
       id: {
-        title: 'ID',
-        width: '100px',
+        title: "ID",
+        width: "100px",
       },
       name: {
-        title: 'Full Name',
-        width: '40%',
+        title: "Full Name",
+        width: "40%",
       },
       username: {
-        title: 'User Name',
+        title: "User Name",
       },
       email: {
-        title: 'Email',
+        title: "Email",
       },
     },
   };
-
 }

@@ -1,11 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ViewCell } from 'ng2-smart-table';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { ViewCell } from "ngx-better-table";
 
 @Component({
-  selector: 'button-view',
-  template: `
-    <button (click)="onClick()">{{ renderValue }}</button>
-  `,
+  selector: "button-view",
+  template: ` <button (click)="onClick()">{{ renderValue }}</button> `,
 })
 export class ButtonViewComponent implements ViewCell, OnInit {
   renderValue: string;
@@ -25,36 +23,35 @@ export class ButtonViewComponent implements ViewCell, OnInit {
 }
 
 @Component({
-  selector: 'basic-example-button-view',
+  selector: "basic-example-button-view",
   template: `
-    <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+    <ngx-better-table [settings]="settings" [source]="data"></ngx-better-table>
   `,
 })
 export class BasicExampleButtonViewComponent implements OnInit {
-
   settings = {
     columns: {
       id: {
-        title: 'ID',
+        title: "ID",
       },
       name: {
-        title: 'Full Name',
+        title: "Full Name",
       },
       username: {
-        title: 'User Name',
+        title: "User Name",
       },
       email: {
-        title: 'Email',
+        title: "Email",
       },
       button: {
-        title: 'Button',
-        type: 'custom',
+        title: "Button",
+        type: "custom",
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-            alert(`${row.name} saved!`)
+          instance.save.subscribe((row) => {
+            alert(`${row.name} saved!`);
           });
-        }
+        },
       },
     },
   };
@@ -62,44 +59,42 @@ export class BasicExampleButtonViewComponent implements OnInit {
   data = [
     {
       id: 1,
-      name: 'Leanne Graham',
-      username: 'Bret',
-      email: 'Sincere@april.biz',
-      button: 'Button #1',
+      name: "Leanne Graham",
+      username: "Bret",
+      email: "Sincere@april.biz",
+      button: "Button #1",
     },
     {
       id: 2,
-      name: 'Ervin Howell',
-      username: 'Antonette',
-      email: 'Shanna@melissa.tv',
-      button: 'Button #2',
+      name: "Ervin Howell",
+      username: "Antonette",
+      email: "Shanna@melissa.tv",
+      button: "Button #2",
     },
     {
       id: 3,
-      name: 'Clementine Bauch',
-      username: 'Samantha',
-      email: 'Nathan@yesenia.net',
-      button: 'Button #3',
+      name: "Clementine Bauch",
+      username: "Samantha",
+      email: "Nathan@yesenia.net",
+      button: "Button #3",
     },
     {
       id: 4,
-      name: 'Patricia Lebsack',
-      username: 'Karianne',
-      email: 'Julianne.OConner@kory.org',
-      button: 'Button #4',
+      name: "Patricia Lebsack",
+      username: "Karianne",
+      email: "Julianne.OConner@kory.org",
+      button: "Button #4",
     },
     {
       id: 5,
-      name: 'Chelsey Dietrich',
-      username: 'Kamren',
-      email: 'Lucio_Hettinger@annie.ca',
-      button: 'Button #5',
+      name: "Chelsey Dietrich",
+      username: "Kamren",
+      email: "Lucio_Hettinger@annie.ca",
+      button: "Button #5",
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

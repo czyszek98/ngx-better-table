@@ -6,7 +6,7 @@ import {
   withInterceptorsFromDi,
 } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-import { Ng2SmartTableModule } from "ng2-smart-table";
+import { Ng2SmartTableModule } from "ngx-better-table";
 
 import { PagesModule } from "./pages/pages.module";
 import { AppComponent } from "./app.component";

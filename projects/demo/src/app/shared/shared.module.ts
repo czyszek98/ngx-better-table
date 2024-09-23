@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from "ngx-better-table";
 
-import { HeaderComponent } from './components/header/header.component';
-import { BasicExampleDataComponent } from './components/basic-example/basic-example-data.component';
-import { BasicExampleComponent } from './components/basic-example/basic-example.component';
+import { HeaderComponent } from "./components/header/header.component";
+import { BasicExampleDataComponent } from "./components/basic-example/basic-example-data.component";
+import { BasicExampleComponent } from "./components/basic-example/basic-example.component";
 
-import { HighlightCodeDirective } from './directives/highlight.directive';
+import { HighlightCodeDirective } from "./directives/highlight.directive";
 
 const SHARED_COMPONENTS = [
   HeaderComponent,
@@ -16,23 +16,11 @@ const SHARED_COMPONENTS = [
   BasicExampleDataComponent,
 ];
 
-const SHARED_DIRECTIVES = [
-  HighlightCodeDirective,
-];
+const SHARED_DIRECTIVES = [HighlightCodeDirective];
 
 @NgModule({
-  imports: [
-    RouterModule,
-    CommonModule,
-    Ng2SmartTableModule,
-  ],
-  declarations: [
-    ...SHARED_COMPONENTS,
-    ...SHARED_DIRECTIVES,
-  ],
-  exports: [
-    ...SHARED_COMPONENTS,
-    ...SHARED_DIRECTIVES,
-  ],
+  imports: [RouterModule, CommonModule, Ng2SmartTableModule],
+  declarations: [...SHARED_COMPONENTS, ...SHARED_DIRECTIVES],
+  exports: [...SHARED_COMPONENTS, ...SHARED_DIRECTIVES],
 })
-export class SharedModule { }
+export class SharedModule {}

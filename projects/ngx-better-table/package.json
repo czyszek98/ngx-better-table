@@ -1,0 +1,16 @@
+{
+  "name": "ngx-better-table",
+  "version": "1.0.0",
+  "description": "Angular Better Table",
+  "author": "czyszek98",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "tslib": "^2.7.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^18.2.5",
+    "@angular/core": "^18.2.5",
+    "@angular/forms": "^18.2.5"
+  }
+}

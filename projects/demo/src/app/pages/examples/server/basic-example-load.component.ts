@@ -1,36 +1,37 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { LocalDataSource } from 'ng2-smart-table';
-import { BasicExampleLoadService } from './basic-example-load.service';
+import { LocalDataSource } from "ngx-better-table";
+import { BasicExampleLoadService } from "./basic-example-load.service";
 
 @Component({
-  selector: 'basic-example-load',
+  selector: "basic-example-load",
   providers: [BasicExampleLoadService],
   template: `
-    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    <ngx-better-table
+      [settings]="settings"
+      [source]="source"
+    ></ngx-better-table>
   `,
 })
 export class BasicExampleLoadComponent {
-
   source: LocalDataSource;
 
   settings = {
     columns: {
       id: {
-        title: 'ID',
+        title: "ID",
         editable: false,
         addable: false,
       },
 
-
       name: {
-        title: 'Full Name',
+        title: "Full Name",
       },
       username: {
-        title: 'User Name',
+        title: "User Name",
       },
       email: {
-        title: 'Email',
+        title: "Email",
       },
     },
   };
