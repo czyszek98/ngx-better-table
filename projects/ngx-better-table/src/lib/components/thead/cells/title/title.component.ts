@@ -19,12 +19,12 @@ import { Column } from "../../../../lib/data-set/column";
       href="#"
       *ngIf="column.isSortable"
       (click)="_sort($event)"
-      class="ng2-smart-sort-link sort"
+      class="ngx-better-sort-link sort"
       [ngClass]="currentDirection"
     >
       {{ column.title }}
     </a>
-    <span class="ng2-smart-sort" *ngIf="!column.isSortable">{{
+    <span class="ngx-better-sort" *ngIf="!column.isSortable">{{
       column.title
     }}</span>
   `,

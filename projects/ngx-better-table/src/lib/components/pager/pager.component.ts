@@ -14,14 +14,14 @@ import { DataSource } from "../../lib/data-source/data-source";
   selector: "ngx-better-table-pager",
   styleUrls: ["./pager.component.scss"],
   template: `
-    <nav *ngIf="shouldShow()" class="ng2-smart-pagination-nav">
-      <ul class="ng2-smart-pagination pagination">
+    <nav *ngIf="shouldShow()" class="ngx-better-pagination-nav">
+      <ul class="ngx-better-pagination pagination">
         <li
-          class="ng2-smart-page-item page-item"
+          class="ngx-better-page-item page-item"
           [ngClass]="{ disabled: getPage() == 1 }"
         >
           <a
-            class="ng2-smart-page-link page-link"
+            class="ngx-better-page-link page-link"
             href="#"
             (click)="getPage() == 1 ? false : paginate(1)"
             aria-label="First"
@@ -31,11 +31,11 @@ import { DataSource } from "../../lib/data-source/data-source";
           </a>
         </li>
         <li
-          class="ng2-smart-page-item page-item"
+          class="ngx-better-page-item page-item"
           [ngClass]="{ disabled: getPage() == 1 }"
         >
           <a
-            class="ng2-smart-page-link page-link page-link-prev"
+            class="ngx-better-page-link page-link page-link-prev"
             href="#"
             (click)="getPage() == 1 ? false : prev()"
             aria-label="Prev"
@@ -45,15 +45,15 @@ import { DataSource } from "../../lib/data-source/data-source";
           </a>
         </li>
         <li
-          class="ng2-smart-page-item page-item"
+          class="ngx-better-page-item page-item"
           [ngClass]="{ active: getPage() == page }"
           *ngFor="let page of getPages()"
         >
-          <span class="ng2-smart-page-link page-link" *ngIf="getPage() == page"
+          <span class="ngx-better-page-link page-link" *ngIf="getPage() == page"
             >{{ page }} <span class="sr-only">(current)</span></span
           >
           <a
-            class="ng2-smart-page-link page-link"
+            class="ngx-better-page-link page-link"
             href="#"
             (click)="paginate(page)"
             *ngIf="getPage() != page"
@@ -62,11 +62,11 @@ import { DataSource } from "../../lib/data-source/data-source";
         </li>
 
         <li
-          class="ng2-smart-page-item page-item"
+          class="ngx-better-page-item page-item"
           [ngClass]="{ disabled: getPage() == getLast() }"
         >
           <a
-            class="ng2-smart-page-link page-link page-link-next"
+            class="ngx-better-page-link page-link page-link-next"
             href="#"
             (click)="getPage() == getLast() ? false : next()"
             aria-label="Next"
@@ -77,11 +77,11 @@ import { DataSource } from "../../lib/data-source/data-source";
         </li>
 
         <li
-          class="ng2-smart-page-item page-item"
+          class="ngx-better-page-item page-item"
           [ngClass]="{ disabled: getPage() == getLast() }"
         >
           <a
-            class="ng2-smart-page-link page-link"
+            class="ngx-better-page-link page-link"
             href="#"
             (click)="getPage() == getLast() ? false : paginate(getLast())"
             aria-label="Last"
@@ -95,7 +95,7 @@ import { DataSource } from "../../lib/data-source/data-source";
 
     <nav
       *ngIf="perPageSelect && perPageSelect.length > 0"
-      class="ng2-smart-pagination-per-page"
+      class="ngx-better-pagination-per-page"
     >
       <label for="per-page"> Per Page: </label>
       <select

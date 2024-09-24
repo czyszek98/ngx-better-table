@@ -22,7 +22,7 @@ import { Column } from "../../../lib/data-set/column";
     ></th>
     <th
       *ngFor="let column of getVisibleColumns(grid.getColumns())"
-      class="ng2-smart-th {{ column.id }}"
+      class="ngx-better-th {{ column.id }}"
     >
       <ngx-better-table-filter
         [source]="source"

@@ -14,7 +14,7 @@ import { Cell } from "../../../lib/data-set/cell";
   selector: "[ng2-st-thead-form-row]",
   template: `
     <td *ngIf=""></td>
-    <td *ngIf="showActionColumnLeft" class="ng2-smart-actions">
+    <td *ngIf="showActionColumnLeft" class="ngx-better-actions">
       <ng2-st-actions
         [grid]="grid"
         (create)="onCreate($event)"
@@ -32,7 +32,7 @@ import { Cell } from "../../../lib/data-set/cell";
       >
       </ngx-better-table-cell>
     </td>
-    <td *ngIf="showActionColumnRight" class="ng2-smart-actions">
+    <td *ngIf="showActionColumnRight" class="ngx-better-actions">
       <ng2-st-actions
         [grid]="grid"
         (create)="onCreate($event)"

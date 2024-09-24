@@ -7,7 +7,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./filter.component.scss"],
   template: `
     <div
-      class="ng2-smart-filter"
+      class="ngx-better-filter"
       *ngIf="column.isFilterable"
       [ngSwitch]="column.getFilterType()"
     >

@@ -1,6 +1,6 @@
-.ng2-smart-pagination {
+.ngx-better-pagination {
   display: inline-flex;
-  font-size: .875em;
+  font-size: 0.875em;
   padding: 0;
 
   .sr-only {
@@ -10,15 +10,16 @@
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
   }
 
-  .ng2-smart-page-item {
+  .ngx-better-page-item {
     display: inline;
   }
 
-  .page-link-next, .page-link-prev {
+  .page-link-next,
+  .page-link-prev {
     font-size: 10px;
   }
 }

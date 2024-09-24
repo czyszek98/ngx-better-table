@@ -6,7 +6,7 @@ import { DataSource } from "../../../lib/data-source/data-source";
 @Component({
   selector: "ng2-st-column-title",
   template: `
-    <div class="ng2-smart-title">
+    <div class="ngx-better-title">
       <ngx-better-table-title
         [source]="source"
         [column]="column"
