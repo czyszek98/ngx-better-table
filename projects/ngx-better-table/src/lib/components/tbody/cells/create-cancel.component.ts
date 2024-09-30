@@ -4,7 +4,7 @@ import { Grid } from "../../../lib/grid";
 import { Row } from "../../../lib/data-set/row";
 
 @Component({
-  selector: "ngxst-tbody-create-cancel",
+  selector: "ngx-st-tbody-create-cancel",
   template: `
     <a
       href="#"

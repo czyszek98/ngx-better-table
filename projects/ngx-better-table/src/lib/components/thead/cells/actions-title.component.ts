@@ -9,7 +9,7 @@ import {
 import { Grid } from "../../../lib/grid";
 
 @Component({
-  selector: "[ngxst-actions-title]",
+  selector: "[ngx-st-actions-title]",
   template: ` <div class="ngx-better-title">{{ actionsColumnTitle }}</div> `,
 })
 export class ActionsTitleComponent implements AfterViewInit, OnChanges {

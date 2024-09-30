@@ -4,7 +4,7 @@ import { Column } from "../../../lib/data-set/column";
 import { DataSource } from "../../../lib/data-source/data-source";
 
 @Component({
-  selector: "ngxst-column-title",
+  selector: "ngx-st-column-title",
   template: `
     <div class="ngx-better-title">
       <ngx-better-table-title

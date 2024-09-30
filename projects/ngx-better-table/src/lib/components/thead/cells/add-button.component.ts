@@ -12,7 +12,7 @@ import { Grid } from "../../../lib/grid";
 import { DataSource } from "../../../lib/data-source/data-source";
 
 @Component({
-  selector: "[ngxst-add-button]",
+  selector: "[ngx-st-add-button]",
   template: `
     <a
       *ngIf="isActionAdd"

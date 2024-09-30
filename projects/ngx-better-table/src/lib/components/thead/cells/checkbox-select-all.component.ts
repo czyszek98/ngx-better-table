@@ -4,7 +4,7 @@ import { Grid } from "../../../lib/grid";
 import { DataSource } from "../../../lib/data-source/data-source";
 
 @Component({
-  selector: "[ngxst-checkbox-select-all]",
+  selector: "[ngx-st-checkbox-select-all]",
   template: ` <input type="checkbox" [ngModel]="isAllSelected" /> `,
 })
 export class CheckboxSelectAllComponent {

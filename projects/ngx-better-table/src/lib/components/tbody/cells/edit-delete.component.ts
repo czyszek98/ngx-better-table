@@ -12,7 +12,7 @@ import { Row } from "../../../lib/data-set/row";
 import { DataSource } from "../../../lib/data-source/data-source";
 
 @Component({
-  selector: "ngxst-tbody-edit-delete",
+  selector: "ngx-st-tbody-edit-delete",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <a

@@ -17,14 +17,14 @@
     *ngIf="!row.isInEditing && showActionColumnLeft"
     class="ngx-better-actions"
   >
-    <ngxst-tbody-custom
+    <ngx-st-tbody-custom
       [grid]="grid"
       (custom)="custom.emit($event)"
       [row]="row"
       [source]="source"
-    ></ngxst-tbody-custom>
+    ></ngx-st-tbody-custom>
 
-    <ngxst-tbody-edit-delete
+    <ngx-st-tbody-edit-delete
       [grid]="grid"
       [deleteConfirm]="deleteConfirm"
       [editConfirm]="editConfirm"
@@ -34,17 +34,17 @@
       [row]="row"
       [source]="source"
     >
-    </ngxst-tbody-edit-delete>
+    </ngx-st-tbody-edit-delete>
   </td>
   <td
     *ngIf="row.isInEditing && showActionColumnLeft"
     class="ngx-better-actions"
   >
-    <ngxst-tbody-create-cancel
+    <ngx-st-tbody-create-cancel
       [grid]="grid"
       [row]="row"
       [editConfirm]="editConfirm"
-    ></ngxst-tbody-create-cancel>
+    ></ngx-st-tbody-create-cancel>
   </td>
   <td *ngFor="let cell of getVisibleCells(row.cells)">
     <ngx-better-table-cell
@@ -64,25 +64,25 @@
     *ngIf="row.isInEditing && showActionColumnRight"
     class="ngx-better-actions"
   >
-    <ngxst-tbody-create-cancel
+    <ngx-st-tbody-create-cancel
       [grid]="grid"
       [row]="row"
       [editConfirm]="editConfirm"
-    ></ngxst-tbody-create-cancel>
+    ></ngx-st-tbody-create-cancel>
   </td>
 
   <td
     *ngIf="!row.isInEditing && showActionColumnRight"
     class="ngx-better-actions"
   >
-    <ngxst-tbody-custom
+    <ngx-st-tbody-custom
       [grid]="grid"
       (custom)="custom.emit($event)"
       [row]="row"
       [source]="source"
-    ></ngxst-tbody-custom>
+    ></ngx-st-tbody-custom>
 
-    <ngxst-tbody-edit-delete
+    <ngx-st-tbody-edit-delete
       [grid]="grid"
       [deleteConfirm]="deleteConfirm"
       [editConfirm]="editConfirm"
@@ -92,7 +92,7 @@
       (delete)="delete.emit(row)"
       (editRowSelect)="editRowSelect.emit($event)"
     >
-    </ngxst-tbody-edit-delete>
+    </ngx-st-tbody-edit-delete>
   </td>
 </tr>
 

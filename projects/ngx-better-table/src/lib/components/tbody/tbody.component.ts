@@ -5,7 +5,7 @@ import { DataSource } from "../../lib/data-source/data-source";
 import { Cell } from "../../lib/data-set/cell";
 
 @Component({
-  selector: "[ngxst-tbody]",
+  selector: "[ngx-st-tbody]",
   styleUrls: ["./tbody.component.scss"],
   templateUrl: "./tbody.component.html",
 })

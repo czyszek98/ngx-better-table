@@ -10,7 +10,7 @@ import { Row } from "../../../lib/data-set/row";
 import { Grid } from "../../../lib/grid";
 
 @Component({
-  selector: "ngxst-tbody-custom",
+  selector: "ngx-st-tbody-custom",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <a

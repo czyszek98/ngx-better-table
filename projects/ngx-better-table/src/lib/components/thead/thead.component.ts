@@ -10,7 +10,7 @@ import { Grid } from "../../lib/grid";
 import { DataSource } from "../../lib/data-source/data-source";
 
 @Component({
-  selector: "[ngxst-thead]",
+  selector: "[ngx-st-thead]",
   templateUrl: "./thead.component.html",
 })
 export class Ng2SmartTableTheadComponent implements OnChanges {

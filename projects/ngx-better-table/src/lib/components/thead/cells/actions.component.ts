@@ -9,7 +9,7 @@ import {
 import { Grid } from "../../../lib/grid";
 
 @Component({
-  selector: "ngxst-actions",
+  selector: "ngx-st-actions",
   template: `
     <a
       href="#"

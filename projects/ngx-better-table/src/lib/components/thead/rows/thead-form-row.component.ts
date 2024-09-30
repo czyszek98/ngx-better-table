@@ -11,11 +11,14 @@ import { Row } from "../../../lib/data-set/row";
 import { Cell } from "../../../lib/data-set/cell";
 
 @Component({
-  selector: "[ngxst-thead-form-row]",
+  selector: "[ngx-st-thead-form-row]",
   template: `
     <td *ngIf=""></td>
     <td *ngIf="showActionColumnLeft" class="ngx-better-actions">
-      <ngxst-actions [grid]="grid" (create)="onCreate($event)"></ngxst-actions>
+      <ngx-st-actions
+        [grid]="grid"
+        (create)="onCreate($event)"
+      ></ngx-st-actions>
     </td>
     <td *ngFor="let cell of getVisibleCells(grid.getNewRow().getCells())">
       <ngx-better-table-cell
@@ -30,7 +33,10 @@ import { Cell } from "../../../lib/data-set/cell";
       </ngx-better-table-cell>
     </td>
     <td *ngIf="showActionColumnRight" class="ngx-better-actions">
-      <ngxst-actions [grid]="grid" (create)="onCreate($event)"></ngxst-actions>
+      <ngx-st-actions
+        [grid]="grid"
+        (create)="onCreate($event)"
+      ></ngx-st-actions>
     </td>
   `,
 })
