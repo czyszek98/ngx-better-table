@@ -11,11 +11,11 @@ import { DataSource } from "../../../lib/data-source/data-source";
 import { Column } from "../../../lib/data-set/column";
 
 @Component({
-  selector: "[ng2-st-thead-filters-row]",
+  selector: "[ngxst-thead-filters-row]",
   template: `
     <th *ngIf="isMultiSelectVisible"></th>
     <th
-      ng2-st-add-button
+      ngxst-add-button
       *ngIf="showActionColumnLeft"
       [grid]="grid"
       (create)="create.emit($event)"
@@ -33,7 +33,7 @@ import { Column } from "../../../lib/data-set/column";
       </ngx-better-table-filter>
     </th>
     <th
-      ng2-st-add-button
+      ngxst-add-button
       *ngIf="showActionColumnRight"
       [grid]="grid"
       [source]="source"

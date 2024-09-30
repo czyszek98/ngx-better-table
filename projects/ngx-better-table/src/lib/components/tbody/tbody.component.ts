@@ -1,16 +1,15 @@
-import {Component, Input, Output, EventEmitter, } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-import { Grid } from '../../lib/grid';
-import { DataSource } from '../../lib/data-source/data-source';
-import { Cell } from '../../lib/data-set/cell';
+import { Grid } from "../../lib/grid";
+import { DataSource } from "../../lib/data-source/data-source";
+import { Cell } from "../../lib/data-set/cell";
 
 @Component({
-  selector: '[ng2-st-tbody]',
-  styleUrls: ['./tbody.component.scss'],
-  templateUrl: './tbody.component.html',
+  selector: "[ngxst-tbody]",
+  styleUrls: ["./tbody.component.scss"],
+  templateUrl: "./tbody.component.html",
 })
 export class Ng2SmartTableTbodyComponent {
-
   @Input() grid: Grid;
   @Input() source: DataSource;
   @Input() deleteConfirm: EventEmitter<any>;
@@ -39,20 +38,21 @@ export class Ng2SmartTableTbodyComponent {
   noDataMessage: boolean;
 
   get tableColumnsCount() {
-    const actionColumns = this.isActionAdd || this.isActionEdit || this.isActionDelete ? 1 : 0;
+    const actionColumns =
+      this.isActionAdd || this.isActionEdit || this.isActionDelete ? 1 : 0;
     return this.grid.getColumns().length + actionColumns;
   }
 
   ngOnChanges() {
     this.isMultiSelectVisible = this.grid.isMultiSelectVisible();
-    this.showActionColumnLeft = this.grid.showActionColumn('left');
-    this.mode = this.grid.getSetting('mode');
-    this.editInputClass = this.grid.getSetting('edit.inputClass');
-    this.showActionColumnRight = this.grid.showActionColumn('right');
-    this.isActionAdd = this.grid.getSetting('actions.add');
-    this.isActionEdit = this.grid.getSetting('actions.edit');
-    this.isActionDelete = this.grid.getSetting('actions.delete');
-    this.noDataMessage = this.grid.getSetting('noDataMessage');
+    this.showActionColumnLeft = this.grid.showActionColumn("left");
+    this.mode = this.grid.getSetting("mode");
+    this.editInputClass = this.grid.getSetting("edit.inputClass");
+    this.showActionColumnRight = this.grid.showActionColumn("right");
+    this.isActionAdd = this.grid.getSetting("actions.add");
+    this.isActionEdit = this.grid.getSetting("actions.edit");
+    this.isActionDelete = this.grid.getSetting("actions.delete");
+    this.noDataMessage = this.grid.getSetting("noDataMessage");
   }
 
   getVisibleCells(cells: Array<Cell>): Array<Cell> {

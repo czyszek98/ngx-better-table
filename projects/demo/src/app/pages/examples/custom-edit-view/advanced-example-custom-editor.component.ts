@@ -22,7 +22,7 @@ export class AdvancedExamplesCustomEditorComponent {
       id: 2,
       name: "Ervin Howell",
       username: "Antonette",
-      link: '<a href="https://github.com/akveo/ng2-admin">Ng2 Admin</a>',
+      link: '<a href="https://github.com/akveo/ngxadmin">Ng2 Admin</a>',
     },
     {
       id: 3,
